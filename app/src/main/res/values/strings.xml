@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">TestTaskMonkeyTreasure</string>
+    <string name="monkey_treasure">MonkeyTreasure</string>
+    <string name="web_view">WebView</string>
+    <string name="current_usd">Текущее значение доллара США:</string>
+    <string name="compare">СРАВНИТЬ</string>
+    <string name="text_description">Нужно пройти по минному полю,\n«протапав» путь от обезьянки до сундука,\nи при этом не погибнуть.\nИ есть только одна правильная дорожка\nдо сундука с золотом,\nостальное пространство занимают\nловушки из змей и скорпионов.</string>
+    <string name="start_game">Начать</string>
+</resources>
