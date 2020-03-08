@@ -23,7 +23,7 @@ import java.util.concurrent.ExecutionException;
 
 public class LoadingView extends AppCompatActivity {
 
-    private String currentUSD1;
+    private String currentUSD;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,19 +35,20 @@ public class LoadingView extends AppCompatActivity {
         DownloadJSONTask task = new DownloadJSONTask();
         task.execute("https://www.cbr-xml-daily.ru/daily_json.js");
         try {
-            String curUSD = task.get();
-            System.out.println("currentUSD1= " + curUSD + " *********************************************");
+            currentUSD = task.get();
+            //System.out.println("**************************** " + currentUSD );
         } catch (ExecutionException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        // задержка перехода в активность activity_current_usd
+
+        // Задержка перехода в активность activity_current_usd
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 Intent intent = new Intent(LoadingView.this, CurrentUsd.class);
-                intent.putExtra("currentUSD", currentUSD1);
+                intent.putExtra("currentUSD", currentUSD);
                 startActivity(intent);
                 finish();
             }
@@ -56,13 +57,9 @@ public class LoadingView extends AppCompatActivity {
 
     }
 
-//    public void onShowMessage() throws ExecutionException, InterruptedException {
-//        DownloadJSONTask task = new DownloadJSONTask();
-//        task.execute("https://www.cbr-xml-daily.ru/daily_json.js");
-//        String curUSD = task.get();
-//    }
 
     public static class DownloadJSONTask extends AsyncTask<String, Void, String>{
+
         private String currentUSD;
 
         @Override
@@ -70,7 +67,7 @@ public class LoadingView extends AppCompatActivity {
             URL url = null;
             HttpURLConnection urlConnection = null;
             StringBuilder result = new StringBuilder();
-            //String currentUSD;
+
             try {
                 url = new URL(strings[0]);
                 urlConnection = (HttpURLConnection) url.openConnection();
@@ -82,7 +79,6 @@ public class LoadingView extends AppCompatActivity {
                     result.append(line);
                     line = reader.readLine();
                 }
-                Log.i("11111111111111111", "*********************************");
 
                 String s = result.toString();
                 JSONObject jsonObject = new JSONObject(s);
@@ -90,7 +86,7 @@ public class LoadingView extends AppCompatActivity {
                 JSONObject jsonObject2 = jsonObject1.getJSONObject("USD");
                 currentUSD = jsonObject2.getString("Value");
                  Log.i("MyResult3333", currentUSD);
-                //return result.toString();
+
                 return currentUSD;
 
             } catch (MalformedURLException e) {
@@ -104,18 +100,7 @@ public class LoadingView extends AppCompatActivity {
                     urlConnection.disconnect();
                 }
             }
-            return "hello My frend";
-        }
-
-
-        @Override
-        protected void onPostExecute(String s) {
-            super.onPostExecute(s);
-            Log.i("MyResult", s);
-            currentUSD = s;
-            Log.i("MyResultC", s);
-        }
-
-
-    }
-}
+            return null;
+        }//doInBackground
+    }//class DownloadJSON
+} // class LoadingView

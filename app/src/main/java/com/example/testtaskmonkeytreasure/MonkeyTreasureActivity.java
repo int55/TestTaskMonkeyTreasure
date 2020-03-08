@@ -19,7 +19,7 @@ import android.widget.ImageView;
 public class MonkeyTreasureActivity extends AppCompatActivity {
 
     private Dialog dialog;
-    ImageView imageView;
+    private ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,12 +49,8 @@ public class MonkeyTreasureActivity extends AppCompatActivity {
             }
         });
         dialog.show();
-
-        //подключение анимации
-        final Animation a = AnimationUtils.loadAnimation(MonkeyTreasureActivity.this, R.anim.alfa);
-
         setImage(imageView);
-    }
+    } // onCreate
 
     private void setImage(final ImageView imageView){
         imageView.setOnClickListener(new View.OnClickListener() {
@@ -63,22 +59,7 @@ public class MonkeyTreasureActivity extends AppCompatActivity {
                 imageView.setImageResource(R.drawable.cell_pressed);
             }
         });
-//        imageView.setOnTouchListener(new View.OnTouchListener() {
-//            @Override
-//            public boolean onTouch(View view, MotionEvent motionEvent) {
-//                //касание картинки
-//                if (motionEvent.getAction()==MotionEvent.ACTION_DOWN){
-//                    //если коснулся картинки
-//                    imageView.setImageResource(R.drawable.cell_pressed);
-//                    //imgAllBtnBlock.setEnabel(false) // БЛОКИРУЕТ НАЖАТИЕ КАРТИНКИ!!!!!
-//                }else if (motionEvent.getAction()==MotionEvent.ACTION_UP){
-//                    //если отпустил палец
-//
-//                }
-//                return true;
-//            }
-//        });
+
     }
 
-
-}
+} // class MonkeyTreasureActivity

@@ -20,9 +20,7 @@ public class CurrentUsd extends AppCompatActivity {
         String currentUSD = intent.getStringExtra("currentUSD");
 
         textViewCurrentUSD = (TextView) findViewById(R.id.textViewCurrentUSD);
-
-
-        textViewCurrentUSD.setText(currentUSD);
+        textViewCurrentUSD.setText("Текущее значение доллара США:\n"+currentUSD);
 
     }
 
