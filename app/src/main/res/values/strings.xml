@@ -6,4 +6,7 @@
     <string name="compare">СРАВНИТЬ</string>
     <string name="text_description">Нужно пройти по минному полю,\n«протапав» путь от обезьянки до сундука,\nи при этом не погибнуть.\nИ есть только одна правильная дорожка\nдо сундука с золотом,\nостальное пространство занимают\nловушки из змей и скорпионов.</string>
     <string name="start_game">Начать</string>
+    <string name="winner_text">Ты помог мартышке найти золото!\nСыграем еще раз?</string>
+    <string name="repeat">ЗАНОВО</string>
+    <string name="game_over_text">Ты проиграл!\nСыграем еще раз?</string>
 </resources>
