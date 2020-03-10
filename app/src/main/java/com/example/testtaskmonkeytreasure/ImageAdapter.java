@@ -16,6 +16,11 @@ public class ImageAdapter extends BaseAdapter {
         mContext = c;
     }
 
+//    @Override
+//    public boolean isEnabled(int position) {
+//        return false;
+//    }
+
     public int getCount() {
         return imageCell.length;
     }
@@ -32,6 +37,7 @@ public class ImageAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ImageView imageView;
         imageCell = new Integer[81];
+        // заполняем массив Integer[] imageCell изображениями
         for (int i = 0; i < imageCell.length; i++) {
             imageCell[i] = R.drawable.cell;
         }

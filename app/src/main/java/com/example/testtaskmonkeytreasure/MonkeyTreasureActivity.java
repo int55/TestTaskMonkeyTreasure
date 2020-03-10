@@ -41,7 +41,7 @@ public class MonkeyTreasureActivity extends AppCompatActivity {
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View itemClicked, int position, long id) {
-                Toast.makeText(MonkeyTreasureActivity.this, "toast " + position, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(MonkeyTreasureActivity.this, ""+position, Toast.LENGTH_SHORT).show();
                 if(position == victoryNum) {
                     ((ImageView) itemClicked).setImageResource(R.drawable.win_gold);
                     // вызов диалогового окна "Ты помог мартышке найти золото. Заново?"

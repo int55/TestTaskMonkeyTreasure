@@ -24,7 +24,7 @@ public class WebViewBankiRu extends AppCompatActivity {
         WebSettings webSettings = web.getSettings();
         webSettings.setJavaScriptEnabled(true);
 
-        web.setWebViewClient(new WebViewClient());
+        web.setWebViewClient(new WebViewClient()); // открывает в приложении
         web.loadUrl("http://www.banki.ru/products/currency/cash/moskva/");
     }
 }

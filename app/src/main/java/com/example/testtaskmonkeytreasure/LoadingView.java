@@ -36,7 +36,7 @@ public class LoadingView extends AppCompatActivity {
         task.execute("https://www.cbr-xml-daily.ru/daily_json.js");
         try {
             currentUSD = task.get();
-            //System.out.println("**************************** " + currentUSD );
+           // System.out.println("currentUSD="+ currentUSD);
         } catch (ExecutionException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
@@ -85,7 +85,7 @@ public class LoadingView extends AppCompatActivity {
                 JSONObject jsonObject1 = jsonObject.getJSONObject("Valute");
                 JSONObject jsonObject2 = jsonObject1.getJSONObject("USD");
                 currentUSD = jsonObject2.getString("Value");
-                 Log.i("MyResult3333", currentUSD);
+                 //Log.i("MyResult3333", currentUSD);
 
                 return currentUSD;
 
